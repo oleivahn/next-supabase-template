@@ -7,8 +7,8 @@
     "app/api/(auth)/users/route.ts": "Auth Route"
   },
   "workbench.colorCustomizations": {
-    "window.activeBorder": "#a5a5a5",
-    "window.inactiveBorder": "#ff0000",
+    "window.activeBorder": "#5a5a5a",
+    "window.inactiveBorder": "#5a5a5a",
     "debugConsole.infoForeground": "#dadada",
     "diffEditor.removedTextBackground": "#d6060677",
     "diffEditor.insertedTextBackground": "#049c0444",
