@@ -3,6 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { ConvexClientProvider } from "./ConvexClientProvider";
 
 import { ClerkProvider } from "@clerk/nextjs";
 
@@ -51,22 +52,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme={
-              process.env.DEFAULT_THEME ? process.env.DEFAULT_THEME : "light"
-            }
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="relative flex min-h-screen flex-col">
-              <Navbar />
+          <ConvexClientProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme={
+                process.env.DEFAULT_THEME ? process.env.DEFAULT_THEME : "light"
+              }
+              enableSystem
+              disableTransitionOnChange
+            >
+              <div className="relative flex min-h-screen flex-col">
+                <Navbar />
 
-              <div className="min-h-screen bg-darker pb-10 dark:bg-background">
-                {children}
+                <div className="min-h-screen bg-darker pb-10 dark:bg-background">
+                  {children}
+                </div>
               </div>
-            </div>
-          </ThemeProvider>
+            </ThemeProvider>
+          </ConvexClientProvider>
         </body>
       </html>
     </ClerkProvider>

@@ -17,7 +17,12 @@ CLERK_SECRET_KEY=
 
 https://tweakcn.com/editor/theme
 
-## Development
+#### Convex
+
+npx convex dev
+Log in with Github
+
+#### Development
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
