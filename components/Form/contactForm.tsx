@@ -4,9 +4,10 @@ import React, { useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useMutation } from "convex/react";
+import { api } from "@/convex/_generated/api";
 
 import { contactSchema } from "@/lib/schemas";
-import { submitContactForm } from "@/lib/data/contact";
 
 // - UI Components
 import { Button } from "../ui/button";
@@ -36,6 +37,8 @@ import { Textarea } from "@/components/ui/textarea";
 const ContactForm = () => {
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+  const createContact = useMutation(api.contactUs.create);
 
   const defaultValues = {
     name: "",
@@ -52,20 +55,18 @@ const ContactForm = () => {
   const submitForm = async (values: z.infer<typeof contactSchema>) => {
     setPending(true);
     setError("");
+    setSuccess(false);
 
     try {
-      const res = await submitContactForm(values);
+      await createContact({
+        name: values.name,
+        message: values.message,
+      });
 
-      console.log("📗 [ Client message: ]:", res.message);
-      console.log("📗 [ Data Submitted ]:", res.data);
-
-      if (res.error) {
-        console.error("📕 [ Error ]:", res.message);
-        setError(res.message);
-      } else {
-        // - Reset the form only on success
-        form.reset(defaultValues);
-      }
+      console.log("📗 [ Data Created ]:", values);
+      setSuccess(true);
+      // - Reset the form only on success
+      form.reset(defaultValues);
     } catch (error) {
       const errorMessage =
         error instanceof Error ? error.message : "An unexpected error occurred";
@@ -138,6 +139,11 @@ const ContactForm = () => {
                   {pending ? "Sending..." : "Send Message"}
                 </Button>
               </div>
+              {success && (
+                <div className="mt-4 text-center text-green-500">
+                  Message sent successfully! We&apos;ll get back to you soon.
+                </div>
+              )}
               {error && (
                 <>
                   <div className="mt-4 text-center text-red-500">

@@ -8,7 +8,9 @@
  * @module
  */
 
+import type * as contactUs from "../contactUs.js";
 import type * as testTaskTable from "../testTaskTable.js";
+import type * as testTasks from "../testTasks.js";
 
 import type {
   ApiFromModules,
@@ -17,7 +19,9 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  contactUs: typeof contactUs;
   testTaskTable: typeof testTaskTable;
+  testTasks: typeof testTasks;
 }>;
 
 /**
