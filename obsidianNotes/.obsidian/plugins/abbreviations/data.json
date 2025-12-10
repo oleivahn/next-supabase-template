@@ -1,0 +1,54 @@
+{
+  "abbreviations": {
+    "eg.": {
+      "value": "for example",
+      "isEnabled": true,
+      "position": 1
+    },
+    "atm": {
+      "value": "at the moment",
+      "isEnabled": true,
+      "position": 2
+    },
+    "imo": {
+      "value": "in my opinion",
+      "isEnabled": true,
+      "position": 3
+    },
+    "w/": {
+      "value": "with",
+      "isEnabled": true,
+      "position": 4
+    },
+    "w/o": {
+      "value": "without",
+      "isEnabled": true,
+      "position": 5
+    },
+    "ily": {
+      "value": "I love you",
+      "isEnabled": true,
+      "position": 6
+    },
+    "btw": {
+      "value": "by the way",
+      "isEnabled": true,
+      "position": 7
+    },
+    "afaik": {
+      "value": "as far as I know",
+      "isEnabled": true,
+      "position": 8
+    },
+    "rn": {
+      "value": "right now",
+      "isEnabled": true,
+      "position": 9
+    },
+    "[]": {
+      "value": "- [ ]",
+      "isEnabled": true,
+      "position": 0
+    }
+  }
+}

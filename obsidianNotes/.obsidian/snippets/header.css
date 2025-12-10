@@ -1,0 +1,21 @@
+body {
+  --h1-color: #b76507;
+  --h2-color: #c15351;
+  --h3-color: #c15351;
+  --h4-color: #c15351;
+  --h5-color: #c15351;
+  --h6-color: pink;
+}
+
+/* Removes the code block defualt styling for Obsidian */
+/* .cm-s-obsidian span.cm-inline-code {
+  color: inherit;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: normal;
+  -moz-tab-size: 1;
+  tab-size: 1;
+  padding: 0;
+  margin: 0;
+} */
