@@ -6,6 +6,8 @@
 npm run dev
 
 npx convex dev (Log in with Github)
+or
+npx convex dashboard
 ```
 
 #### From Clerk Dashboard we ONLY need the following variables:
