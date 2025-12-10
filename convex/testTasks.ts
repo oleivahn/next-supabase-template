@@ -21,3 +21,36 @@ export const create = mutation({
     return taskId;
   },
 });
+
+// - Mutation to update an existing test task
+export const update = mutation({
+  args: {
+    id: v.id("testTasks"),
+    taskTest: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const trimmedTaskTest = args.taskTest.trim();
+
+    // - Validate that taskTest is not empty
+    if (trimmedTaskTest.length === 0) {
+      throw new Error("Task name cannot be empty.");
+    }
+
+    await ctx.db.patch(args.id, {
+      taskTest: trimmedTaskTest,
+    });
+
+    return args.id;
+  },
+});
+
+// - Mutation to delete a test task
+export const remove = mutation({
+  args: {
+    id: v.id("testTasks"),
+  },
+  handler: async (ctx, args) => {
+    await ctx.db.delete(args.id);
+    return args.id;
+  },
+});
