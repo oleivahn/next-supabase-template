@@ -11,14 +11,16 @@ const Hero = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <div className="mb-12 max-w-[540px] lg:mb-0">
-                <h2 className="text-dark mb-5 text-3xl font-bold leading-tight dark:text-white sm:text-[40px] sm:leading-[1.2]">
+                <h2 className="text-dark mb-5 text-3xl font-bold leading-tight text-primary sm:text-[40px] sm:leading-[1.2]">
                   🚧👷🏼 Lei Solutions 🚧
                 </h2>
-                <p className="text-body-color dark:text-dark-6 mb-10 text-base leading-relaxed">
-                  Upon this rock I will build my church.
-                  <br />
-                  <br />
-                  Enjoy the journey.
+                <p className="mb-10 text-lg font-medium leading-relaxed text-muted-foreground sm:text-2xl">
+                  <span className="mb-2 block text-2xl font-bold text-muted-foreground sm:text-3xl">
+                    Upon this rock I will build my church.
+                  </span>
+                  <span className="mt-4 block text-xl italic text-gray-500 dark:text-gray-400 sm:text-2xl">
+                    Enjoy the journey.
+                  </span>
                 </p>
                 <Link href="/contact-us">
                   <Button size="lg" className="mr-4">
