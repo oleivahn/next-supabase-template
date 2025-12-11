@@ -18,10 +18,7 @@ const Hero = () => {
                   Upon this rock I will build my church.
                   <br />
                   <br />
-                  In the meantime, you can send us an email and we will get back
-                  to you as soon as we can.
-                  <br />
-                  Thank you for your understanding.
+                  Enjoy the journey.
                 </p>
                 <Link href="/contact-us">
                   <Button size="lg" className="mr-4">

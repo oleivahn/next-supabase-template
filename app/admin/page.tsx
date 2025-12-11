@@ -12,6 +12,15 @@ export default function AdminPage() {
         <p className="mt-2 text-muted-foreground">
           You will only see the component below if you have the admin role.
         </p>
+        <p className="mt-2 text-muted-foreground">
+          <span className="font-bold">Add the admin role</span> on the
+          <span className="font-bold"> user&apos;s public metadata</span> on
+          Clerk.
+        </p>
+        <p className="mt-2 text-muted-foreground">
+          Read the <span className="font-bold">README.md</span> file for more
+          information.
+        </p>
 
         <div className="mt-8">
           <RoleGate allowedRoles={["admin"]}>
